@@ -42,7 +42,7 @@ func FeedBalanced(f Feed, d, b Product) bool {
 		return false
 	}
 	massOK := math.Abs(f.Rate-(d.Rate+b.Rate)) < 1e-9*f.Rate
-	lightOK := math.Abs(f.LightInFeed()-(d.Light()+b.Heavy())) < 1e-9*f.LightInFeed()
+	lightOK := math.Abs(f.LightInFeed()-(d.Light()+b.Light())) < 1e-9*f.LightInFeed()
 	return massOK && lightOK
 }
 

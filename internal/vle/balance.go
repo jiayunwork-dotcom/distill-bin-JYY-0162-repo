@@ -35,7 +35,7 @@ func SolveBalance(F, zF, xD, xB float64) (BalanceResult, error) {
 	if D < 0 || B < 0 {
 		return BalanceResult{}, ErrInvalidFeed
 	}
-	check := D*xD + B*(1-xB) - F*zF
+	check := D*xD + B*xB - F*zF
 	res := BalanceResult{
 		Distillate: D,
 		Bottoms:    B,
